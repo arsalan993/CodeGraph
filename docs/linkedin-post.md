@@ -20,7 +20,7 @@ The demo builds a small data application that imports records, calculates KPIs, 
 
 This remains an experiment and a portfolio project. It supports a focused workflow rather than general autonomous software development. My next step is to replace the deterministic builders with constrained model-generated patches while keeping the validation and workspace controls in charge.
 
-Source code: {{GITHUB_URL}}
+Source code: https://github.com/arsalan993/CodeGraph
 
 #SoftwareEngineering #AIEngineering #MultiAgentSystems #Python #PortfolioProject
 
