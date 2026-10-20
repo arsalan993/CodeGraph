@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CodeGraph</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/graph.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-mark">CG</span><div><strong>CodeGraph</strong><small>Agent workspace</small></div></div>
+    <button class="new-button" id="new-project">＋ New project</button>
+    <p class="section-label">PROJECTS</p>
+    <nav id="project-list" class="project-list"></nav>
+    <div class="sidebar-foot"><span class="pulse"></span><span id="connection">Local engine</span><small id="provider">checking…</small></div>
+  </aside>
+
+  <main>
+    <header class="topbar">
+      <div><p class="eyebrow">ACTIVE WORKSPACE</p><h1 id="project-title">Create your first project</h1></div>
+      <div class="top-actions"><span id="project-status" class="status neutral">No project</span><button id="run-button" class="primary" disabled>Run agents</button></div>
+    </header>
+
+    <section id="empty-state" class="empty-state">
+      <div class="orb"><span></span><span></span><span></span></div>
+      <p class="eyebrow">MULTI AGENT DEVELOPMENT</p>
+      <h2>Describe an application.<br>Watch its system take shape.</h2>
+      <p>CodeGraph maps modules, assigns agents, tracks files, and verifies each change.</p>
+      <button class="primary large" id="empty-create">Create a project</button>
+    </section>
+
+    <section id="workspace" class="workspace hidden">
+      <div class="stats" id="stats"></div>
+      <div class="content-grid">
+        <article class="panel graph-panel">
+          <div class="panel-head">
+            <div><p class="eyebrow">LIVE SYSTEM MAP</p><h2>Project graph</h2></div>
+            <div class="segmented"><button class="active" data-view="modules">Modules</button><button data-view="agents">Agents</button></div>
+          </div>
+          <div class="graph-toolbar"><span id="graph-caption">Architecture and dependencies · scroll to zoom · drag to pan</span><div class="graph-controls"><button id="zoom-out" title="Zoom out">−</button><span id="zoom-level">100%</span><button id="zoom-in" title="Zoom in">＋</button><button id="fit-graph" title="Fit all nodes">⌖ Fit</button></div></div>
+          <div id="graph" class="graph"><svg id="edges"></svg><div id="nodes"></div></div>
+        </article>
+
+        <aside class="panel inspector" id="inspector">
+          <div class="panel-head"><div><p class="eyebrow">INSPECTOR</p><h2>Project brief</h2></div></div>
+          <div id="inspector-content"></div>
+        </aside>
+
+        <article class="panel activity-panel">
+          <div class="panel-head"><div><p class="eyebrow">EVENT STREAM</p><h2>Agent activity</h2></div><span class="live"><i></i> Live</span></div>
+          <div id="activity" class="activity"></div>
+        </article>
+
+        <article class="panel files-panel">
+          <div class="panel-head"><div><p class="eyebrow">WORKSPACE REGISTRY</p><h2>Files & memory</h2></div></div>
+          <div class="mini-tabs"><button class="active" data-tab="files">Files</button><button data-tab="memory">Memory</button></div>
+          <div id="registry" class="registry"></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="create-dialog">
+    <form id="create-form">
+      <button type="button" class="dialog-close" id="dialog-close">×</button>
+      <p class="eyebrow">NEW PROJECT</p><h2>What should the agents build?</h2>
+      <p>CodeGraph will turn your request into a module plan before any work starts.</p>
+      <textarea id="prompt" required minlength="12" rows="6">Build a system that imports data from a free source, calculates KPIs, exposes an API, and visualizes the results in a dashboard.</textarea>
+      <div class="dialog-actions"><button type="button" id="cancel-create">Cancel</button><button class="primary" type="submit">Create graph</button></div>
+    </form>
+  </dialog>
+  <div id="toast" class="toast"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
+

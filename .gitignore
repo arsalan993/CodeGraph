@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+data/*.db
+data/*.db-*
+workspaces/*
+!workspaces/.gitkeep
+.carousel-build/
+tools/node_modules
+
