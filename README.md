@@ -1,5 +1,7 @@
 # CodeGraph
 
+> A local, graph based multi-agent development workspace for portfolio and open source experimentation.
+
 CodeGraph is a local, graph based multi-agent development workspace. A project lead turns a request into modules, module coordinators manage coding and testing agents, and the dashboard shows their lifecycle, files, shared memory, dependencies, and validation results.
 
 This repository contains a working portfolio MVP. Its built-in demo provider produces a deterministic data and KPI application, so the complete workflow runs without an API key. A Groq adapter is included for future model-driven planning and implementation.
@@ -65,4 +67,12 @@ The tests verify graph creation, an end-to-end agent run, generated files, valid
 ## MVP boundaries
 
 The running version demonstrates the complete orchestration loop with deterministic project builders. It supports one generated Python application pattern and processes modules sequentially. Before exposing it as a hosted service, add container isolation, authentication, resource limits, and model patch schemas. See [the feature draft](docs/feature-draft.md) for the broader product plan.
+
+## Contributing
+
+Issues and pull requests are welcome. Keep changes focused, document behavior changes, and run the test suite before opening a pull request.
+
+## License
+
+CodeGraph is released under the [MIT License](LICENSE).
 
